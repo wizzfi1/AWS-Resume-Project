@@ -1,4 +1,4 @@
-name: 🚀 Deploy Resume to S3
+name: Deploy Resume to S3
 
 on:
   push:
@@ -22,5 +22,5 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Sync to S3
-      run: aws s3 sync . s3://wizfi-bucket --delete --exclude ".git/*" --exclude ".github/*"
+      run: aws s3 sync ./resume-website s3://wizfi-bucket --delete --exclude ".git/*" --exclude ".github/*"
 
