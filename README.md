@@ -1,5 +1,10 @@
 # 💼 Wisdom Shaibu – Cloud DevOps Resume
 
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/wizzfi1/resume-deploy/deploy.yml?branch=main&label=build&logo=github&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/wizzfi1/resume-deploy?style=flat-square)
+![View Counter](https://img.shields.io/badge/dynamic/json?color=blue&label=Views&query=views&url=https://2k88saonj3.execute-api.eu-north-1.amazonaws.com&style=flat-square)
+![Made with HTML](https://img.shields.io/badge/Built%20with-HTML%2FCSS-blue?style=flat-square&logo=html5)
+
 ![Visitor Count](https://img.shields.io/badge/dynamic/json?label=👁️%20Views&url=https://2k88saonj3.execute-api.eu-north-1.amazonaws.com&query=views&color=blue)
 
 📍 **Live Website**  
