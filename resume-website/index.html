@@ -1,92 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Wisdom Shaibu - Cloud DevOps Resume</title>
-    <style>
-      :root {
-        --bg-color: #f4f4f4;
-        --text-color: #222;
-        --link-color: #005792;
-        --highlight: #eaeaea;
-      }
-  
-      [data-theme="dark"] {
-        --bg-color: #1e1e1e;
-        --text-color: #f5f5f5;
-        --link-color: #4ea0ff;
-        --highlight: #333;
-      }
-  
-      body {
-        background-color: var(--bg-color);
-        color: var(--text-color);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 20px;
-        max-width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wisdom Shaibu - Cloud DevOps Resume</title>
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #222;
+      --link-color: #005792;
+      --highlight: #eaeaea;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #1e1e1e;
+      --text-color: #f5f5f5;
+      --link-color: #4ea0ff;
+      --highlight: #333;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--highlight);
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+
+    .nav-title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      background: none;
+      border: 1px solid var(--link-color);
+      border-radius: 6px;
+      padding: 5px 10px;
+      color: var(--link-color);
+      font-size: 14px;
+    }
+
+    h1, h2 {
+      color: var(--link-color);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    .section {
+      margin-top: 40px;
+    }
+
+    .contact a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .job-title {
+      font-weight: bold;
+    }
+
+    .role-location {
+      font-style: italic;
+      color: #777;
+    }
+
+    .project-title {
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    #visitor-count {
+      margin-top: 30px;
+      font-size: 14px;
+      color: gray;
+    }
+
+    @media screen and (max-width: 600px) {
       nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: var(--highlight);
-        padding: 10px 20px;
-        margin-bottom: 20px;
+        flex-direction: column;
+        align-items: flex-start;
       }
-  
-      .nav-title {
-        font-weight: bold;
-        font-size: 18px;
-      }
-  
       .theme-toggle {
-        cursor: pointer;
-        background: none;
-        border: 1px solid var(--link-color);
-        border-radius: 6px;
-        padding: 5px 10px;
-        color: var(--link-color);
-        font-size: 14px;
+        margin-top: 10px;
       }
-  
-      .hamburger {
-        display: none;
-        font-size: 20px;
-        cursor: pointer;
-      }
-  
-      @media screen and (max-width: 600px) {
-        nav {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-        .theme-toggle {
-          margin-top: 10px;
-        }
-      }
-  
-      h1, h2 {
-        color: var(--link-color);
-      }
-  
-      .contact a {
-        color: var(--link-color);
-        text-decoration: none;
-      }
-    </style>
-  </head>  
-<body>
-  <body data-theme="light">
-    <nav>
-      <div class="nav-title">💼 Wisdom Shaibu</div>
-      <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
-    </nav>
-  
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <nav>
+    <div class="nav-title">💼 Wisdom Shaibu</div>
+    <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
+  </nav>
 
   <h1>Wisdom Ojochegbe Shaibu</h1>
   <p class="contact">
@@ -94,6 +115,10 @@
     <a href="mailto:shaibuwisdom@gmail.com">shaibuwisdom@gmail.com</a> | +234 813 836 9506<br>
     <a href="https://linkedin.com/in/wisdom-shaibu-tech">LinkedIn</a> |
     <a href="https://github.com/wizzfi1">GitHub</a>
+  </p>
+
+  <p style="font-size: 14px; margin-top: -10px; color: #666;">
+    🧰 <strong>Stack:</strong> Azure · AWS · Docker · Terraform · GitHub Actions · Node.js · Python · C#
   </p>
 
   <div class="section">
@@ -108,12 +133,12 @@
   <div class="section">
     <h2>Technical Skills</h2>
     <ul>
-      <li><strong>CI/CD & DevOps:</strong> Azure DevOps, GitHub Actions, Docker, Kubernetes, Terraform, Ansible</li>
-      <li><strong>Cloud:</strong> Microsoft Azure, AWS</li>
-      <li><strong>Programming:</strong> C#, Bash, YAML, Python, .NET, JS, SQL, Node.js</li>
-      <li><strong>Security:</strong> RBAC, JWT, API Auth, Role-Based Access, CCNA</li>
-      <li><strong>Version Control:</strong> Git, GitHub</li>
-      <li><strong>Other:</strong> Agile, Debugging, Monitoring, Problem Solving</li>
+      <li>🛠️ <strong>CI/CD & DevOps:</strong> Azure DevOps, GitHub Actions, Docker, Kubernetes, Terraform, Ansible</li>
+      <li>☁️ <strong>Cloud:</strong> Microsoft Azure, AWS</li>
+      <li>💻 <strong>Programming:</strong> C#, Bash, YAML, Python, .NET, JS, SQL, Node.js</li>
+      <li>🔐 <strong>Security:</strong> RBAC, JWT, API Auth, Role-Based Access, CCNA</li>
+      <li>🔀 <strong>Version Control:</strong> Git, GitHub</li>
+      <li>📊 <strong>Other:</strong> Agile, Debugging, Monitoring, Problem Solving</li>
     </ul>
   </div>
 
@@ -142,22 +167,23 @@
 
   <div class="section">
     <h2>Projects</h2>
-    <p class="project-title">Automated Full-Stack Deployment with DevOps Pipeline</p>
-    <p>Terraform · Ansible · Docker · GitHub Actions · AWS EC2 · Grafana · Prometheus</p>
+
+    <p class="project-title">🚀 Automated Full-Stack Deployment with DevOps Pipeline</p>
+    <p>🌍 Terraform · 🔧 Ansible · 🐳 Docker · ⚙️ GitHub Actions · ☁️ AWS EC2 · 📈 Grafana · 📡 Prometheus</p>
     <ul>
       <li>Zero-touch CI/CD pipeline, IaC setup with Terraform.</li>
       <li>Dockerized infra via Ansible, monitored with Grafana/Prometheus.</li>
     </ul>
 
-    <p class="project-title">Job Board API</p>
-    <p>Node.js · PostgreSQL · JWT · Sequelize</p>
+    <p class="project-title">🛠️ Job Board API</p>
+    <p>🟢 Node.js · 🐘 PostgreSQL · 🔑 JWT · 📦 Sequelize</p>
     <ul>
       <li>Role-based authentication, secure file uploads.</li>
       <li>Planned container deployment and CI.</li>
     </ul>
 
-    <p class="project-title">Azure AD Reader</p>
-    <p>C# · Graph API · Azure Active Directory</p>
+    <p class="project-title">🔐 Azure AD Reader</p>
+    <p>💠 C# · Microsoft Graph API · Azure Active Directory</p>
     <ul>
       <li>Fetched users from Azure AD via OAuth 2.0 flow.</li>
     </ul>
@@ -168,24 +194,24 @@
     <p><strong>B.Eng – Computer Engineering</strong><br>
     FUT Minna | 2015 – 2021 | Second Class Upper</p>
     <ul>
-      <li>Azure Fundamentals – Jun 2025</li>
-      <li>Azure Developer Associate – Mar 2025</li>
-      <li>Kubernetes & Cloud Native Associate – Jun 2025</li>
-      <li>CCNA – Dec 2020</li>
+      <li>📜 Azure Fundamentals – Jun 2025</li>
+      <li>📜 Azure Developer Associate – Mar 2025</li>
+      <li>☸️ Kubernetes & Cloud Native Associate – Jun 2025</li>
+      <li>📡 CCNA – Dec 2020</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Additional Skills</h2>
     <ul>
-      <li>Soft: Communication, Documentation, Time Management</li>
-      <li>DevOps: CI, IaC, Monitoring, GitHub Reviews</li>
+      <li>💬 Soft: Communication, Documentation, Time Management</li>
+      <li>🧪 DevOps: CI, IaC, Monitoring, GitHub Reviews</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Interests</h2>
-    <p>Cloud Infrastructure, Automation, Monitoring, Open Source, Music, Sports</p>
+    <p>🛰️ Cloud Infrastructure, 🤖 Automation, 📡 Monitoring, 🔓 Open Source, 🎧 Music, ⚽ Sports</p>
   </div>
 
   <p id="visitor-count">👁️ Views: Loading...</p>
@@ -200,21 +226,18 @@
         document.getElementById("visitor-count").innerText = "👁️ Views: unavailable";
       });
   </script>
+
   <script>
     const toggleBtn = document.getElementById("themeToggle");
     const body = document.body;
-  
-    // Load saved theme
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) body.setAttribute("data-theme", savedTheme);
-  
+    
     toggleBtn.addEventListener("click", () => {
       const current = body.getAttribute("data-theme") === "dark" ? "light" : "dark";
       body.setAttribute("data-theme", current);
       localStorage.setItem("theme", current);
     });
   </script>
-  
-
 </body>
 </html>
