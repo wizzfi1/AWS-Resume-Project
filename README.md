@@ -1,6 +1,6 @@
 # 💼 Wisdom Shaibu - Cloud DevOps Resume
 
-[![Deploy to S3](https://github.com/wizzfi1/devops-resume/actions/workflows/deploy.yml/badge.svg)](https://github.com/wizzfi1/devops-resume/actions/workflows/deploy.yml)
+[![Deploy to S3](https://github.com/wizzfi1/devops-resume/actions/workflows/deploy.yml/badge.svg)](https://github.com/wizzfi1/aws-resume-project/actions/workflows/deploy.yml)
 ![AWS](https://img.shields.io/badge/AWS-CloudFront%2FS3-orange?logo=amazonaws)
 ![Azure](https://img.shields.io/badge/Azure-DevOps-blue?logo=microsoftazure)
 ![IaC](https://img.shields.io/badge/IaC-Terraform%2FAnsible-%23774ABC)
