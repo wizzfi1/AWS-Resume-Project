@@ -1,77 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wisdom Shaibu - Cloud DevOps Resume</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
-      margin: 0;
-      padding: 20px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    h1, h2 {
-      color: #005792;
-    }
-
-    h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 6px;
-      margin-top: 40px;
-    }
-
-    p, li {
-      line-height: 1.6;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .contact a {
-      color: #005792;
-      text-decoration: none;
-    }
-
-    .job-title {
-      font-weight: bold;
-    }
-
-    .role-location {
-      font-style: italic;
-      color: #555;
-    }
-
-    .project-title {
-      font-weight: bold;
-      margin-top: 10px;
-      color: #222;
-    }
-
-    #visitor-count {
-      color: gray;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    @media screen and (max-width: 600px) {
-      body {
-        padding: 15px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wisdom Shaibu - Cloud DevOps Resume</title>
+    <style>
+      :root {
+        --bg-color: #f4f4f4;
+        --text-color: #222;
+        --link-color: #005792;
+        --highlight: #eaeaea;
       }
-    }
-  </style>
-</head>
+  
+      [data-theme="dark"] {
+        --bg-color: #1e1e1e;
+        --text-color: #f5f5f5;
+        --link-color: #4ea0ff;
+        --highlight: #333;
+      }
+  
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 20px;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+  
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--highlight);
+        padding: 10px 20px;
+        margin-bottom: 20px;
+      }
+  
+      .nav-title {
+        font-weight: bold;
+        font-size: 18px;
+      }
+  
+      .theme-toggle {
+        cursor: pointer;
+        background: none;
+        border: 1px solid var(--link-color);
+        border-radius: 6px;
+        padding: 5px 10px;
+        color: var(--link-color);
+        font-size: 14px;
+      }
+  
+      .hamburger {
+        display: none;
+        font-size: 20px;
+        cursor: pointer;
+      }
+  
+      @media screen and (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .theme-toggle {
+          margin-top: 10px;
+        }
+      }
+  
+      h1, h2 {
+        color: var(--link-color);
+      }
+  
+      .contact a {
+        color: var(--link-color);
+        text-decoration: none;
+      }
+    </style>
+  </head>  
 <body>
+  <body data-theme="light">
+    <nav>
+      <div class="nav-title">💼 Wisdom Shaibu</div>
+      <button class="theme-toggle" id="themeToggle">Toggle Theme</button>
+    </nav>
+  
 
   <h1>Wisdom Ojochegbe Shaibu</h1>
   <p class="contact">
@@ -185,6 +200,21 @@
         document.getElementById("visitor-count").innerText = "👁️ Views: unavailable";
       });
   </script>
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+  
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) body.setAttribute("data-theme", savedTheme);
+  
+    toggleBtn.addEventListener("click", () => {
+      const current = body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      body.setAttribute("data-theme", current);
+      localStorage.setItem("theme", current);
+    });
+  </script>
+  
 
 </body>
 </html>
