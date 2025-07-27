@@ -1,91 +1,78 @@
-# 💼 Wisdom Shaibu – Cloud DevOps Resume
+# 💼 Wisdom Shaibu - Cloud DevOps Resume
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/wizzfi1/resume-deploy/deploy.yml?branch=main&label=build&logo=github&style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/wizzfi1/resume-deploy?style=flat-square)
-![View Counter](https://img.shields.io/badge/dynamic/json?color=blue&label=Views&query=views&url=https://2k88saonj3.execute-api.eu-north-1.amazonaws.com&style=flat-square)
-![Made with HTML](https://img.shields.io/badge/Built%20with-HTML%2FCSS-blue?style=flat-square&logo=html5)
+[![Deploy to S3](https://github.com/wizzfi1/devops-resume/actions/workflows/deploy.yml/badge.svg)](https://github.com/wizzfi1/devops-resume/actions/workflows/deploy.yml)
+![AWS](https://img.shields.io/badge/AWS-CloudFront%2FS3-orange?logo=amazonaws)
+![Azure](https://img.shields.io/badge/Azure-DevOps-blue?logo=microsoftazure)
+![IaC](https://img.shields.io/badge/IaC-Terraform%2FAnsible-%23774ABC)
+![Views](https://img.shields.io/badge/Views-Dynamic-lightgrey?style=flat-square)
 
-![Visitor Count](https://img.shields.io/badge/dynamic/json?label=👁️%20Views&url=https://2k88saonj3.execute-api.eu-north-1.amazonaws.com&query=views&color=blue)
-
-📍 **Live Website**  
-🌐 [View Resume](https://d19tltegw3kn0f.cloudfront.net)
+> 🚀 Live Resume: [https://d19tltegw3kn0f.cloudfront.net](https://d19tltegw3kn0f.cloudfront.net)
 
 ---
 
-## 🚀 Project Overview
+## 📄 About
 
-This project hosts my resume as a static site on AWS, enriched with DevOps automation and cloud services.
+This is a **Cloud DevOps Resume** site built using HTML/CSS, fully deployed on **AWS S3 + CloudFront**, and backed by a live **Lambda + DynamoDB** visitor counter API.
 
-### 🌟 Features
-
-- ✅ Static website hosted on **Amazon S3**
-- ✅ Global content delivery via **CloudFront**
-- ✅ HTTPS encryption (SSL/TLS)
-- ✅ Live **visitor counter** using:
-  - AWS Lambda (Node.js)
-  - API Gateway
-  - DynamoDB
-- ✅ CI/CD Pipeline with **GitHub Actions**
-- ✅ Dynamic visitor badge via **Shields.io**
+It includes:
+- Responsive mobile UI
+- Dark/light theme toggle 🌗
+- CI/CD pipeline with GitHub Actions
+- Dynamic visitor count displayed on the page 👁️
 
 ---
 
-## 🛠️ Tech Stack
+## 📦 Tech Stack
 
-| Component      | Service                     |
-|----------------|-----------------------------|
-| Website Hosting| Amazon S3 (Static Website)  |
-| CDN            | AWS CloudFront              |
-| Backend Logic  | AWS Lambda (Node.js 18.x)   |
-| API Endpoint   | Amazon API Gateway          |
-| Database       | Amazon DynamoDB             |
-| CI/CD          | GitHub Actions              |
-| Domain         | `*.cloudfront.net` (Free Tier) |
+| Area              | Tools Used |
+|-------------------|------------|
+| ☁️ Cloud Platform | AWS (S3, CloudFront, Lambda, DynamoDB, API Gateway) |
+| 🚀 CI/CD          | GitHub Actions |
+| 📦 Infrastructure | Terraform, Ansible |
+| 👨‍💻 Frontend      | HTML5, CSS3, JavaScript |
+| 🔐 Auth/Security  | IAM Roles, CORS, CloudFront OAC |
 
 ---
 
-## 📂 Project Structure
+## ⚙️ CI/CD Workflow
 
-```
-├── resume-website/ # Contains index.html and assets
-├── lambda/ # Lambda code (visitor-counter logic)
-├── .github/workflows/ # GitHub Actions CI/CD pipeline
-└── README.md # This file
-
-```
-
-
----
-
-## 🔄 Deployment
-
-### Push to Deploy (CI/CD)
-
-This project auto-deploys via GitHub Actions:
+Automatically deploys `resume-website/` to S3 and invalidates CloudFront cache on push to `main`.
 
 ```yaml
+name: Deploy Resume to S3
+
 on:
   push:
-    branches:
-      - main
-```
+    branches: [main]
 
-It syncs your site to S3 and invalidates the CloudFront cache.
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-north-1
+      - run: |
+          aws s3 sync ./resume-website s3://wizfi-bucket --delete
+      - run: |
+          aws cloudfront create-invalidation \
+            --distribution-id EG6N3RCWLM0WT \
+            --paths "/*"
 
-📈 Visitor Counter Flow
+📈 Visitor Count
+This project uses AWS Lambda + DynamoDB to dynamically update and show visit count.
 
-HTML page loads and calls your API:
-https://2k88saonj3.execute-api.eu-north-1.amazonaws.com
+// Fetch view count from API
+fetch("https://2k88saonj3.execute-api.eu-north-1.amazonaws.com")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("visitor-count").innerText = `👁️ Views: ${data.views}`;
+  });
 
-Lambda updates view count in DynamoDB
 
-Badge and page display the live count
+🛡️ License
+MIT License © Wisdom Shaibu
 
-🙌 Acknowledgments
-Big shoutout to:
-
-AWS Free Tier ☁️
-
-Shields.io 🛡️
-
-GitHub Actions 🚀
