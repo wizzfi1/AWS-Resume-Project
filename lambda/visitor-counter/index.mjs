@@ -7,7 +7,7 @@ const client = new DynamoDBClient({ region: "eu-north-1" });
 const ddb = DynamoDBDocumentClient.from(client);
 
 export const handler = async (event) => {
-  console.log("✅ Lambda triggered with event:", JSON.stringify(event));
+  console.log(" Lambda triggered with event:", JSON.stringify(event));
 
   try {
     const result = await ddb.send(
@@ -26,7 +26,7 @@ export const handler = async (event) => {
       })
     );
 
-    console.log("✅ DynamoDB update result:", result);
+    console.log(" DynamoDB update result:", result);
 
     return {
       statusCode: 200,
@@ -36,7 +36,7 @@ export const handler = async (event) => {
       body: JSON.stringify({ views: result.Attributes.views })
     };
   } catch (err) {
-    console.error("❌ Lambda error:", err);
+    console.error(" Lambda error:", err);
     return {
       statusCode: 500,
       headers: {
