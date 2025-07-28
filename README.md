@@ -2,7 +2,6 @@
 
 [![Deploy to S3](https://github.com/wizzfi1/AWS-Resume-project/actions/workflows/deploy.yml/badge.svg)](https://github.com/wizzfi1/AWS-Resume-project/actions/workflows/deploy.yml)
 ![AWS](https://img.shields.io/badge/AWS-CloudFront%2FS3-orange?logo=amazonaws)
-![Azure](https://img.shields.io/badge/Azure-DevOps-blue?logo=microsoftazure)
 ![IaC](https://img.shields.io/badge/IaC-Terraform%2FAnsible-%23774ABC)
 ![Views](https://img.shields.io/badge/Views-Dynamic-lightgrey?style=flat-square)
 
