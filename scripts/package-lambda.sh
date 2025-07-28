@@ -1,23 +1,23 @@
 #!/bin/bash
 set -e
 
-echo "📦 Packaging Lambda function..."
+echo "Packaging Lambda function..."
 
-# Go to project root (from terraform folder)
-cd ..
+# Go to the repo root directory (safe regardless of where script is called from)
+cd "$(git rev-parse --show-toplevel)"
 
-# Create temp folder
+# Prepare temp folder
 mkdir -p terraform/lambda-temp
 
-# Copy the Lambda source to temp folder
+# Copy Lambda code
 cp lambda/visitor-counter/index.mjs terraform/lambda-temp/index.mjs
 
-# Zip the contents
+# Zip it
 cd terraform/lambda-temp
 zip -r ../lambda/visitor-counter.zip .
 
-# Cleanup temp
+# Cleanup
 cd ..
 rm -rf lambda-temp
 
-echo "✅ Lambda function zipped at terraform/lambda/visitor-counter.zip"
+echo " Lambda function zipped at terraform/lambda/visitor-counter.zip"
