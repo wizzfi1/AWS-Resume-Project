@@ -11,34 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout source code
+      - name: Checkout source code
         uses: actions/checkout@v4
 
-      - name: ☁️ Configure AWS credentials (eu-north-1)
+      - name: Configure AWS credentials (eu-north-1)
         uses: aws-actions/configure-aws-credentials@v3
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: eu-north-1
 
-      - name: 🧼 Clean and package Lambda
+      - name: Package Lambda
         run: bash scripts/package-lambda.sh
 
-      - name: 🚀 Deploy static site to S3
+      - name: Deploy static site to S3
         run: |
           aws s3 sync ./resume-website s3://wizfi-bucket \
             --delete \
             --exclude ".git/*" \
             --exclude ".github/*"
 
-      - name: 🌐 Configure AWS credentials (CloudFront - us-east-1)
+      - name: Configure AWS credentials (CloudFront - us-east-1)
         uses: aws-actions/configure-aws-credentials@v3
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: 🔁 Invalidate CloudFront cache
+      - name: Invalidate CloudFront cache
         run: |
           aws cloudfront create-invalidation \
             --distribution-id EG6N3RCWLM0WT \
