@@ -74,7 +74,7 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id EG6N3RCWLM0WT \
             --paths "/*"
-
+```
 
 📈 Visitor Count
 Integrated AWS Lambda function increments and retrieves resume views in real-time from DynamoDB.
@@ -87,8 +87,6 @@ fetch("https://2k88saonj3.execute-api.eu-north-1.amazonaws.com")
   });
 
 
-🧪 Try It Out
-Live Resume: View Now »
 
 Trigger Lambda Counter: Open devtools and refresh to see view count increase
 
